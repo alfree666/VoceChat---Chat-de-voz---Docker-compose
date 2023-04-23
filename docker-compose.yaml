@@ -8,6 +8,12 @@ services:
         restart: unless-stopped
         ports:
             - "8200:3000"
+        environment:
+          - UID=1000
+          - GID=1000
+          - ADMIN_USER=admin
+          - ADMIN_PASSWORD=123456
+          - DOMAIN=localhost            
         volumes:
             - ./vocechat:/home/vocechat-server/data
 
